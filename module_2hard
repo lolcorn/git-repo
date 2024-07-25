@@ -1,0 +1,18 @@
+import random
+
+frst_plst_all = list(range(3, 21))
+frst_plast = int(random.choice(frst_plst_all))
+for_password = list(range(1, frst_plast))
+password = []
+print(frst_plast)
+for one in for_password:
+    for two in for_password:
+        log = one + two
+        if log < 3:
+            continue
+        if frst_plast % log == 0 and one < two:
+            password.append(one)
+            password.append(two)
+        else:
+            continue
+print(*password, sep='')
